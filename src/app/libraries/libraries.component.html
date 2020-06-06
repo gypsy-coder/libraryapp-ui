@@ -1,0 +1,20 @@
+<div class="library-wrapper">
+    <div class="title">Libraries</div>
+    <div class="libraries">
+        <div class="flexbox">
+            <div class="library box-shadow" *ngFor="let libr of libraries" (click)="fetchBooks(libr)">
+                {{libr.name}}
+                <div class="location">{{libr.location}}</div>
+            </div>
+        </div>
+        <div class="bookspanel box-shadow" *ngIf="viewBooks">
+            <div class="books">List of Books in {{libraryName}}</div>
+            <hr>
+            <br>
+            <div *ngFor="let book of books">
+                {{book.name}}   -   {{book.author}}
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>
